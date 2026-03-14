@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="tr">
+ 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Şahhane Sofra</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+ 
+<body>
+ 
+  <nav>
+    <div class="nav-logo"><strong>Şahhane</strong> <em>sofra</em></div>
+    <ul class="nav-links">
+      <li><a href="#menu">Menü</a></li>
+      <li><a href="#rating">Değerlendirmeler</a></li>
+      <li><a href="#location">Konum</a></li>
+      <li><a href="#contact">İletişim</a></li>
+    </ul>
+    <button class="burger" id="burger" aria-label="Menüyü aç">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#menu" onclick="closeMobile()">Menü</a>
+    <a href="#rating" onclick="closeMobile()">Değerlendirmeler</a>
+    <a href="#location" onclick="closeMobile()">Konum</a>
+    <a href="#contact" onclick="closeMobile()">İletişim</a>
+  </div>
+ 
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-tag">Restoran</div>
+      <h1 class="hero-title">Şahhane<span class="sub">sofra</span></h1>
+      <p class="hero-sub">Tadı, sessizliği ve anın güzelliğini takdir edenler için sıcak bir mekân. Özel mutfak, taze
+        hamur işleri ve şehrin en iyi kahvesi.</p>
+      <a href="#menu" class="hero-btn">Menüyü Gör</a>
+    </div>
+    <div class="hero-photo-grid">
+      <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80" alt="">
+      <img src="https://images.unsplash.com/photo-1519676867240-f03562e64548?w=600&q=80" alt="">
+      <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=600&q=80" alt="">
+    </div>
+  </section>
+ 
+  <!-- MENU -->
+  <section class="section" id="menu" style="background: var(--pale-light);">
+    <div class="section-header">
+      <div class="section-tag">Menümüz</div>
+      <h2 class="section-title">Zevkinize özel her şey</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="tabs">
+      <button class="tab active" onclick="filterMenu('all', this)">Tümü</button>
+      <button class="tab" onclick="filterMenu('coffee', this)">Kahve</button>
+      <button class="tab" onclick="filterMenu('tea', this)">Çay</button>
+      <button class="tab" onclick="filterMenu('breakfast', this)">Kahvaltı</button>
+      <button class="tab" onclick="filterMenu('pastry', this)">Hamur İşi</button>
+      <button class="tab" onclick="filterMenu('lunch', this)">Öğle Yemeği</button>
+      <button class="tab" onclick="filterMenu('dessert', this)">Tatlı</button>
+    </div>
+    <div class="menu-grid" id="menuGrid">
+ 
+      <div class="menu-card menu-item" data-cat="coffee">
+        <div class="card-photo-wrap"><img class="card-photo" src="https://images.unsplash.com/photo-1592663527359-cf6642f54cff?w=600&q=80" alt="Flat White" loading="lazy"><span class="card-badge">Çok Satan</span></div>
+        <div class="card-body"><div class="card-label">Kahve</div><div class="card-name">Flat White</div><div class="card-desc">Çift espresso ve kadifemsi süt — yoğunluk ve yumuşaklığın dengesi</div><div class="card-footer"><span class="card-price">85 ₺</span></div></div>
+      </div>
+ 
+      <div class="menu-card menu-item" data-cat="coffee">
+        <div class="card-photo-wrap"><img class="card-photo" src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=600&q=80" alt="Lavantali Raf" loading="lazy"><span class="card-badge special">Özel Tarif</span></div>
+        <div class="card-body"><div class="card-label">Kahve</div><div class="card-name">Lavantali Raf</div><div class="card-desc">Lavanta şurubu ve bir tutam vanilyalı kremali kahve</div><div class="card-footer"><span class="card-price">110 ₺</span></div></div>
+      </div>
+ 
+      <div class="menu-card menu-item" data-cat="coffee">
+        <div class="card-photo-wrap"><img class="card-photo" src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=600&q=80" alt="Kapuçino" loading="lazy"></div>
+        <div class="card-body"><div class="card-label">Kahve</div><div class="card-name">Kapuçino</div><div class="card-desc">Medium roast çekirdekten klasik kapuçino, bol sütlü köpük ile</div><div class="card-footer"><span class="card-price">75 ₺</span></div></div>
+      </div>
+ 
+      <div class="menu-card menu-item" data-cat="coffee">
+        <div class="card-photo-wrap"><img class="card-photo" src="https://images.unsplash.com/photo-1517959105821-eaf2591984ca?w=600&q=80" alt="Soğuk Brew" loading="lazy"></div>
+        <div class="card-body"><div class="card-label">Kahve</div><div class="card-name">Soğuk Brew</div><div class="card-desc">12 saat soğuk demleme, yumuşak ve az asitli, buz üstünde servis</div><div class="card-footer"><span class="card-price">95 ₺</span></div></div>
+      </div>
+ 
+      <div class="menu-card menu-item" data-cat="tea">
+        <div class="card-photo-wrap"><img class="card-photo" src="https://images.unsplash.com/photo-1567922045116-2a00fae2ed03?w=600&q=80" alt="Türk Çayı" loading="lazy"><span class="card-badge">Çok Satan</span></div>
+        <div class="card-body"><div class="card-label">Çay</div><div class="card-name">Türk Çayı</div><div class="card-desc">Demlikten taze çekilen Rize çayı, ince belli bardakta servis</div><div class="card-footer"><span class="card-price">30 ₺</span></div></div>
+      </div>
+ 
+      <div class="menu-card menu-item" data-cat="tea">
+        <div class="card-photo-wrap"><img class="card-photo" src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=600&q=80" alt="Elma Çayı" loading="lazy"><span class="card-badge special">Özel Tarif</span></div>
+        <div class="card-body"><div class="card-label">Çay</div><div class="card-name">Elma Çayı</div><div class="card-desc">Taze elma dilimleri, tarçın ve karanfille hazırlanan ev yapımı çay</div><div class="card-footer"><span class="card-price">55 ₺</span></div></div>
+      </div>
+ 
+      <div class="menu-card menu-item" data-cat="tea">
+        <div class="card-photo-wrap"><img class="card-photo" src="https://images.unsplash.com/photo-1597318181409-cf64d0b5d8a2?w=600&q=80" alt="Ihlamur" loading="lazy"></div>
+        <div class="card-body"><div class="card-label">Çay</div><div class="card-name">Ihlamur</div><div class="card-desc">Taze ıhlamur çiçeği, bal ve limon ile — sakinleştirici bir fincan</div><div class="card-footer"><span class="card-price">50 ₺</span></div></div>
+      </div>
+ 
+      <div class="menu-card menu-item" data-cat="breakfast">
+        <div class="card-photo-wrap"><img class="card-photo" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80" alt="Şahhane Tabağı" loading="lazy"><span class="card-badge">Çok Satan</span></div>
+        <div class="card-body"><div class="card-label">Kahvaltı</div><div class="card-name">Şahhane Tabağı</div><div class="card-desc">Beyaz peynir, kaşar, zeytin, domates, salatalık, bal, kaymak ve taze ekmek</div><div class="card-footer"><span class="card-price">220 ₺</span></div></div>
+      </div>
+ 
+      <div class="menu-card menu-item" data-cat="breakfast">
+        <div class="card-photo-wrap"><img class="card-photo" src="https://images.unsplash.com/photo-1510693206972-df098062cb71?w=600&q=80" alt="Menemen" loading="lazy"></div>
+        <div class="card-body"><div class="card-label">Kahvaltı</div><div class="card-name">Menemen</div><div class="card-desc">Domates, biber ve yumurta ile hazırlanan geleneksel Türk menemen</div><div class="card-footer"><span class="card-price">130 ₺</span></div></div>
+      </div>
+ 
+      <div class="menu-card menu-item" data-cat="breakfast">
+        <div class="card-photo-wrap"><img class="card-photo" src="https://images.unsplash.com/photo-1541519227354-08fa5d50c820?w=600&q=80" alt="Avokadolu Tost" loading="lazy"><span class="card-badge special">Özel Tarif</span></div>
+        <div class="card-body"><div class="card-label">Kahvaltı</div><div class="card-name">Avokadolu Tost</div><div class="card-desc">Ekşi mayalı ekmek, avokado, ricotta, poşe yumurta, kurutulmuş domates</div><div class="card-footer"><span class="card-price">175 ₺</span></div></div>
+      </div>
+ 
+      <div class="menu-card menu-item" data-cat="pastry">
+        <div class="card-photo-wrap"><img class="card-photo" src="https://images.unsplash.com/photo-1519676867240-f03562e64548?w=600&q=80" alt="Baklava" loading="lazy"><span class="card-badge">Çok Satan</span></div>
+        <div class="card-body"><div class="card-label">Hamur İşi</div><div class="card-name">Baklava</div><div class="card-desc">Antep fıstıklı ev yapımı baklava, her sabah taze hazırlanır</div><div class="card-footer"><span class="card-price">90 ₺</span></div></div>
+      </div>
+ 
+      <div class="menu-card menu-item" data-cat="pastry">
+        <div class="card-photo-wrap"><img class="card-photo" src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&q=80" alt="Açma" loading="lazy"></div>
+        <div class="card-body"><div class="card-label">Hamur İşi</div><div class="card-name">Açma</div><div class="card-desc">Tereyağlı yumuşacık açma, fırından sıcak çıkar her sabah</div><div class="card-footer"><span class="card-price">55 ₺</span></div></div>
+      </div>
+ 
+      <div class="menu-card menu-item" data-cat="pastry">
+        <div class="card-photo-wrap"><img class="card-photo" src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=600&q=80" alt="Börek" loading="lazy"><span class="card-badge special">Özel Tarif</span></div>
+        <div class="card-body"><div class="card-label">Hamur İşi</div><div class="card-name">Börek</div><div class="card-desc">İnce yufkadan peynirli veya kıymalı su böreği, kızgın tavada servis</div><div class="card-footer"><span class="card-price">95 ₺</span></div></div>
+      </div>
+ 
+      <div class="menu-card menu-item" data-cat="lunch">
+        <div class="card-photo-wrap"><img class="card-photo" src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&q=80" alt="Mercimek Çorbası" loading="lazy"><span class="card-badge">Çok Satan</span></div>
+        <div class="card-body"><div class="card-label">Öğle Yemeği</div><div class="card-name">Mercimek Çorbası</div><div class="card-desc">Geleneksel kırmızı mercimek çorbası, limon ve kırmızı biberli tereyağı ile</div><div class="card-footer"><span class="card-price">80 ₺</span></div></div>
+      </div>
+ 
+      <div class="menu-card menu-item" data-cat="lunch">
+        <div class="card-photo-wrap"><img class="card-photo" src="https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=600&q=80" alt="Izgara Tavuk" loading="lazy"></div>
+        <div class="card-body"><div class="card-label">Öğle Yemeği</div><div class="card-name">Izgara Tavuk</div><div class="card-desc">Marine edilmiş tavuk göğsü, mevsim salata ve pilav ile</div><div class="card-footer"><span class="card-price">210 ₺</span></div></div>
+      </div>
+ 
+      <div class="menu-card menu-item" data-cat="lunch">
+        <div class="card-photo-wrap"><img class="card-photo" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=80" alt="Çoban Salata" loading="lazy"></div>
+        <div class="card-body"><div class="card-label">Öğle Yemeği</div><div class="card-name">Çoban Salata</div><div class="card-desc">Taze domates, salatalık, biber, maydanoz, zeytinyağı ve limon sosu</div><div class="card-footer"><span class="card-price">95 ₺</span></div></div>
+      </div>
+ 
+      <div class="menu-card menu-item" data-cat="dessert">
+        <div class="card-photo-wrap"><img class="card-photo" src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&q=80" alt="Sütlaç" loading="lazy"><span class="card-badge">Çok Satan</span></div>
+        <div class="card-body"><div class="card-label">Tatlı</div><div class="card-name">Sütlaç</div><div class="card-desc">Fırında pişirilmiş geleneksel sütlaç, tarçın serpilerek servis edilir</div><div class="card-footer"><span class="card-price">100 ₺</span></div></div>
+      </div>
+ 
+      <div class="menu-card menu-item" data-cat="dessert">
+        <div class="card-photo-wrap"><img class="card-photo" src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600&q=80" alt="Kazandibi" loading="lazy"><span class="card-badge special">Özel Tarif</span></div>
+        <div class="card-body"><div class="card-label">Tatlı</div><div class="card-name">Kazandibi</div><div class="card-desc">Hafif karamelize tavuk göğsü tatlısı — geleneksel Osmanlı lezzeti</div><div class="card-footer"><span class="card-price">110 ₺</span></div></div>
+      </div>
+ 
+      <div class="menu-card menu-item" data-cat="dessert">
+        <div class="card-photo-wrap"><img class="card-photo" src="https://images.unsplash.com/photo-1530610476181-d83430b64dcd?w=600&q=80" alt="Profiterol" loading="lazy"></div>
+        <div class="card-body"><div class="card-label">Tatlı</div><div class="card-name">Profiterol</div><div class="card-desc">Vanilyalı dondurma dolgulu hamur topları, sıcak çikolata sosu ile</div><div class="card-footer"><span class="card-price">130 ₺</span></div></div>
+      </div>
+ 
+    </div>
+  </section>
+ 
+  <!-- RATING -->
+  <section class="rating-section" id="rating">
+    <div class="section-tag">Müşteri Görüşleri</div>
+    <h2 class="section-title" style="font-size:2.4rem;">Misafirlerimiz ne diyor?</h2>
+    <div class="section-divider"></div>
+    <div class="rating-main">
+      <div class="rating-score-block">
+        <div class="rating-big">4.7<span class="rating-max">/5</span></div>
+        <div class="rating-stars" id="mainStars"></div>
+        <div class="rating-count">500+ değerlendirme</div>
+      </div>
+      <div class="rating-divider-v"></div>
+      <div class="rating-platforms">
+        <div class="platform-item">
+          <div class="platform-name">Google</div>
+          <div class="platform-score">4.7</div>
+          <div class="platform-stars" id="gStars"></div>
+        </div>
+        <div class="platform-item">
+          <div class="platform-name">Yandex</div>
+          <div class="platform-score">5.0</div>
+          <div class="platform-stars" id="tStars"></div>
+        </div>
+      </div>
+    </div>
+    <div class="rating-reviews">
+      <div class="review-card">
+        <div class="review-text">Harika bir atmosfer ve muhteşem lezzetler. Özellikle Şahhane Tabağı gerçekten eşsiz. Her hafta geliyoruz, personel çok ilgili ve sıcakkanlı.</div>
+        <div class="review-author"><span class="review-name">Ayşe K.</span><div class="review-mini-stars" id="r1Stars"></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-text">Şehrin en iyi kahvesini burada içtim. Lavantali Raf kahvesi favorim oldu. Mekan çok şık ve huzurlu, çalışmak için de mükemmel bir yer.</div>
+        <div class="review-author"><span class="review-name">Mehmet D.</span><div class="review-mini-stars" id="r2Stars"></div></div>
+      </div>
+      <div class="review-card">
+        <div class="review-text">Baklava ve börek inanılmaz tazeydi. Sabah erken gelip kahvaltı ettik, hem fiyatlar makul hem de kalite çok yüksek. Kesinlikle tavsiye ederim.</div>
+        <div class="review-author"><span class="review-name">Fatma Y.</span><div class="review-mini-stars" id="r3Stars"></div></div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- LOCATION -->
+  <section class="location-section" id="location">
+    <div class="section-header">
+      <div class="section-tag">Konum &amp; Saatler</div>
+      <h2 class="section-title">Bizi bulun</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="location-grid">
+      <div>
+        <div class="hours-title">Çalışma Saatleri</div>
+        <ul class="hours-list">
+          <li class="hours-row"><span class="hours-day" id="d-mon">Pazartesi</span><span class="hours-time">08:00 – 01:30</span></li>
+          <li class="hours-row"><span class="hours-day" id="d-tue">Salı</span><span class="hours-time">08:00 – 01:30</span></li>
+          <li class="hours-row"><span class="hours-day" id="d-wed">Çarşamba</span><span class="hours-time">08:00 – 01:30</span></li>
+          <li class="hours-row">
+            <span class="hours-day" id="d-thu">Perşembe</span>
+            <div><span class="hours-time">08:00 – 01:30</span><span class="hours-note">Saatler değişebilir</span></div>
+          </li>
+          <li class="hours-row">
+            <span class="hours-day" id="d-fri">Cuma</span>
+            <div><span class="hours-time">08:00 – 01:30</span><span class="hours-note">Saatler değişebilir</span></div>
+          </li>
+          <li class="hours-row"><span class="hours-day" id="d-sat">Cumartesi</span><span class="hours-time">08:00 – 01:30</span></li>
+          <li class="hours-row"><span class="hours-day" id="d-sun">Pazar</span><span class="hours-time">08:00 – 01:30</span></li>
+        </ul>
+        <div class="address-block">
+          <div class="address-label">Adres</div>
+          <div class="address-text">Üçtutlar Mah., Dr. İlhan Gürel Cd. 12/c<br>19100 Çorum Merkez / Çorum</div>
+          <a class="address-link" href="https://www.google.com/maps/place/%C5%9Eahhane+Sofra/@40.5686415,34.9637933,17z" target="_blank">Google Maps'te aç →</a>
+        </div>
+      </div>
+      <div class="map-wrap">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3040.5!2d34.9637933!3d40.5686415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40872b74b0b74581:0x168c6f47187623ae!2s%C5%9Eahhane%20Sofra!5e0!3m2!1str!2str!4v1700000000000!5m2!1str!2str"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Şahhane Sofra Konum">
+        </iframe>
+      </div>
+    </div>
+  </section>
+ 
+  <footer id="contact">
+    <div class="footer-logo">Şahhane<span>sofra</span></div>
+    <div class="footer-sep"></div>
+    <div class="footer-info">
+      Üçtutlar Mah., Dr. İlhan Gürel Cd. 12/c<br>
+      19100 Çorum Merkez / Çorum · Her Gün 08:00 – 01:30<br>
+      <a class="footer_links" href="tel:+905321234567">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        +90 (532) 123 45 67
+      </a> ·
+      <a class="footer_links" href="https://www.instagram.com/sahhanesofra" target="_blank">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        Instagram
+      </a>
+    </div>
+  </footer>
+ 
+  <script>
+    const burger = document.getElementById('burger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    burger.addEventListener('click', () => { burger.classList.toggle('open'); mobileMenu.classList.toggle('open'); });
+    function closeMobile() { burger.classList.remove('open'); mobileMenu.classList.remove('open'); }
+    document.addEventListener('click', (e) => { if (!burger.contains(e.target) && !mobileMenu.contains(e.target)) closeMobile(); });
+ 
+    function filterMenu(cat, btn) {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.menu-item').forEach(item => {
+        item.style.display = (cat === 'all' || item.dataset.cat === cat) ? 'flex' : 'none';
+      });
+    }
+ 
+    function starSVG(filled, size) {
+      const c = filled ? '#4A3F5C' : '#D5CEDF';
+      return `<span class="${size}"><svg viewBox="0 0 24 24" fill="${c}" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>`;
+    }
+    function renderStars(id, score, cls) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      let h = '';
+      for (let i = 1; i <= 5; i++) h += starSVG(i <= Math.round(score), cls);
+      el.innerHTML = h;
+    }
+    renderStars('mainStars', 4.7, 'star');
+    renderStars('gStars', 4.7, 's');
+    renderStars('tStars', 5.0, 's');
+    renderStars('r1Stars', 5, 'ms');
+    renderStars('r2Stars', 5, 'ms');
+    renderStars('r3Stars', 5, 'ms');
+ 
+    const days = ['d-sun', 'd-mon', 'd-tue', 'd-wed', 'd-thu', 'd-fri', 'd-sat'];
+    const todayEl = document.getElementById(days[new Date().getDay()]);
+    if (todayEl) todayEl.classList.add('today');
+  </script>
+</body>
+</html>
