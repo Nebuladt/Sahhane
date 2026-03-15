@@ -873,6 +873,8 @@ footer {
 
     .burger {
         display: flex;
+        position: relative;
+        z-index: 105;
     }
 
     .mobile-menu {
